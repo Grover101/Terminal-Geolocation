@@ -1,0 +1,24 @@
+{
+  "name": "terminal-geolocation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grover101/Terminal-Geolocation.git"
+  },
+  "keywords": [],
+  "author": "Grover101",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Grover101/Terminal-Geolocation/issues"
+  },
+  "homepage": "https://github.com/Grover101/Terminal-Geolocation#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.1"
+  }
+}
