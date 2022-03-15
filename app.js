@@ -12,7 +12,8 @@ const main = async () => {
             case 1:
                 // TODO: Mostrar mensaje
                 const place = await readInput('Enter a City:')
-                console.log(place)
+
+                console.log(await search.city(place))
 
                 // TODO: Buscar los lugares
 
