@@ -1,4 +1,4 @@
-const axios = require('axios')
+const fs = require('fs')
 const axios = require('axios')
 
 class Searches {
@@ -41,6 +41,7 @@ class Searches {
             })
 
             const res = await instance.get()
+            console.log(res.data)
             return res.data.features.map(info => ({
                 id: info.id,
                 name: info.place_name,
@@ -48,6 +49,7 @@ class Searches {
                 lng: info.center[0]
             }))
         } catch (error) {
+            console.log(`Error: auth token is invalid`.bgBlack.red)
             return []
         }
     }

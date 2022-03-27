@@ -61,12 +61,12 @@ const readInput = async message => {
     return description
 }
 
-const listTasksDelete = async (tasks = []) => {
-    const choices = tasks.map((task, index) => {
+const listPlaces = async (places = []) => {
+    const choices = places.map((place, index) => {
         const i = `${index + 1}.`.green
         return {
-            value: task.id,
-            name: `${i} ${task.description}`
+            value: place.id,
+            name: `${i} ${place.name}`
         }
     })
 
@@ -79,7 +79,7 @@ const listTasksDelete = async (tasks = []) => {
         {
             type: 'list',
             name: 'id',
-            message: 'Delete Task',
+            message: 'Select Place:',
             choices
         }
     ]
@@ -88,47 +88,9 @@ const listTasksDelete = async (tasks = []) => {
     return id
 }
 
-const confirm = async message => {
-    const question = [
-        {
-            type: 'confirm',
-            name: 'ok',
-            message
-        }
-    ]
-
-    const { ok } = await inquirer.prompt(question)
-    return ok
-}
-
-const showListSelectCompleted = async (tasks = []) => {
-    const choices = tasks.map((task, index) => {
-        const i = `${index + 1}.`.green
-        return {
-            value: task.id,
-            name: ` ${i} ${task.description}`,
-            checked: task.complete ? true : false
-        }
-    })
-
-    const question = [
-        {
-            type: 'checkbox',
-            name: 'ids',
-            message: 'Selections',
-            choices
-        }
-    ]
-
-    const { ids } = await inquirer.prompt(question)
-    return ids
-}
-
 module.exports = {
     listMenu,
     pause,
     readInput,
-    listTasksDelete,
-    confirm,
-    showListSelectCompleted
+    listPlaces
 }
